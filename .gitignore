@@ -193,3 +193,4 @@ GitHub.sublime-settings
 .gitignore
 .idea/
 tmp/
+/.idea
