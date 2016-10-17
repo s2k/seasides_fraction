@@ -27,4 +27,10 @@ describe RationalNumber do
   it 'adds two rationals' do
     expect(RationalNumber.new(3,7) + RationalNumber.new(5,11)).to eq RationalNumber.new(68,77)
   end
+
+  it 'returns NaN for an invalid rational number' do
+    expect(RationalNumber.new(0,0)).to eq RationalNumber::NaN
+    expect(RationalNumber.new(1,0)).to eq RationalNumber::NaN
+    expect(RationalNumber.new(1.4,0)).to eq RationalNumber::NaN
+  end
 end
