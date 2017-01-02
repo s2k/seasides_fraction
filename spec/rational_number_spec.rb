@@ -11,7 +11,7 @@ describe RationalNumber do
   end
 
   it 'automatically reduces initial values' do
-    expect(RationalNumber.new(6,8)). to eq RationalNumber.new(3,4)
+    expect(RationalNumber.new(6,8)).to eq RationalNumber.new(3,4)
   end
 
   it 'has a method to create the value zero' do
