@@ -12,8 +12,8 @@ describe RationalNumber do
 
   it 'can create integer values' do
     expect(RationalNumber.new(7, 7).denominator).to be 1
-    expect(RationalNumber.new(-3, 3).numerator).to be -1
-    expect(RationalNumber.new(1, -1).numerator).to be -1
+    expect(RationalNumber.new(-3, 3).numerator).to be(-1)
+    expect(RationalNumber.new(1, -1).numerator).to be(-1)
     expect(RationalNumber.new(-1, -1).numerator).to be 1
     expect(RationalNumber.new(-2, -1).numerator).to be 2
   end
