@@ -19,7 +19,7 @@ class RationalNumber
   end
 
   def initialize(numerator = 0, denominator = 1)
-    return NaN if denominator == 0
+    return NaN if denominator.zero?
     normalize(denominator, numerator)
   end
 
