@@ -31,10 +31,9 @@ class RationalNumber
   end
 
   def normalize_sign
-    if @denominator < 0
-      @denominator = -@denominator
-      @numerator   = -@numerator
-    end
+    return unless @denominator < 0
+    @denominator = -@denominator
+    @numerator   = -@numerator
   end
 
   def ==(other)
