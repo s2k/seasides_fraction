@@ -39,6 +39,7 @@ describe RationalNumber do
 
   it 'adds two rationals' do
     expect(RationalNumber.new(3, 7) + RationalNumber.new(5, 11)).to eq RationalNumber.new(68, 77)
+    expect(RationalNumber.new(-61, 76) + RationalNumber.new(28, 42)).to eq RationalNumber.new(-31, 228)
   end
 
   it 'returns NaN for an invalid rational number' do
