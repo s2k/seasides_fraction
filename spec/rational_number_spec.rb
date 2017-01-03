@@ -10,6 +10,10 @@ describe RationalNumber do
     expect(RationalNumber.new(5, 7).denominator).to be 7
   end
 
+  it 'can create improper rationals' do
+    expect(RationalNumber.new(11, 13) + RationalNumber.new(7, 11)).to eq RationalNumber.new(212, 143)
+  end
+
   it 'can create integer values' do
     expect(RationalNumber.new(7, 7).denominator).to be 1
     expect(RationalNumber.new(-3, 3).numerator).to be(-1)
