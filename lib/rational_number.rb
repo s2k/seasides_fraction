@@ -1,3 +1,6 @@
+# Provide a simple (simplistic?) implementation of rational numbers
+# An example implementation written while working through WBIDD
+#
 class RationalNumber
   attr_reader :numerator, :denominator
 
@@ -5,13 +8,14 @@ class RationalNumber
     def denominator
       :not_a_number
     end
+
     def numerator
       :not_a_number
     end
   end
 
   def self.zero
-    new(0,1)
+    new(0, 1)
   end
 
   def initialize(numerator = 0, denominator = 1)
