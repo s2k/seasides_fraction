@@ -1,5 +1,5 @@
 # Provide a simple (simplistic?) implementation of rational numbers
-# An example implementation written while working through WBIDD
+# An example implementation written while working through WBITDD
 #
 class RationalNumber
   attr_reader :numerator, :denominator
@@ -17,6 +17,11 @@ class RationalNumber
   def self.zero
     new(0, 1)
   end
+
+  def self.[](numerator = 0, denominator = 1)
+    new(numerator, denominator)
+  end
+
 
   def initialize(numerator = 0, denominator = 1)
     return NaN if denominator.zero?
@@ -40,8 +45,20 @@ class RationalNumber
     numerator == other.numerator && denominator == other.denominator
   end
 
+  def -@
+    self.class.new(-numerator, denominator)
+  end
+
   def +(other)
     gcd = denominator.gcd other.denominator
     self.class.new(numerator * (other.denominator / gcd) + other.numerator * (denominator / gcd), (denominator * other.denominator) / gcd)
+  end
+
+  def -(other)
+    self + -other
+  end
+
+  def invert
+    self.class.new(denominator, numerator)
   end
 end

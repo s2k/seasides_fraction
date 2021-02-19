@@ -3,7 +3,7 @@ require 'spec_helper'
 describe RationalNumber do
   it { is_expected.to be_a RationalNumber }
 
-  it 'can create real a rational number' do
+  it 'can create real rational numbers' do
     expect(RationalNumber.new(1, 2).numerator).to be 1
     expect(RationalNumber.new(2, 3).denominator).to be 3
     expect(RationalNumber.new(3, 7).numerator).to be 3
@@ -12,6 +12,10 @@ describe RationalNumber do
 
   it 'can create improper rationals' do
     expect(RationalNumber.new(11, 13) + RationalNumber.new(7, 11)).to eq RationalNumber.new(212, 143)
+  end
+
+  it 'can create a rational using [] notation' do
+    expect(RationalNumber[3,5]).to eq RationalNumber.new(3,5)
   end
 
   it 'can create integer values' do
@@ -46,5 +50,23 @@ describe RationalNumber do
     expect(RationalNumber.new(0, 0)).to eq RationalNumber::NaN
     expect(RationalNumber.new(1, 0)).to eq RationalNumber::NaN
     expect(RationalNumber.new(1.4, 0)).to eq RationalNumber::NaN
+  end
+
+  it 'computes the negative of a rational' do
+    expect( -RationalNumber.new(7, 29)).to eq RationalNumber.new(-7, 29)
+  end
+
+  it 'subtracts to rationals' do
+    expect(RationalNumber.new(68, 77) - RationalNumber.new(3, 7)).to eq RationalNumber.new(5, 11)
+  end
+
+  it 'inverts a rational number' do
+    expect(RationalNumber[3,7].invert).to eq RationalNumber[7,3]
+    expect(RationalNumber[11,9].invert).to eq RationalNumber[9,11]
+    expect(RationalNumber[11].invert).to eq RationalNumber[1,11]
+  end
+
+  it 'yields NaN as the inmverse of 0' do
+    expect(RationalNumber[0,1].invert).to eq RationalNumber::NaN
   end
 end
