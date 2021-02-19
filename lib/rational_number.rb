@@ -45,6 +45,10 @@ class RationalNumber
     numerator == other.numerator && denominator == other.denominator
   end
 
+  def zero?
+    self == self.class.zero
+  end
+
   def -@
     self.class.new(-numerator, denominator)
   end
@@ -61,4 +65,14 @@ class RationalNumber
   def invert
     self.class.new(denominator, numerator)
   end
+
+  def *(other)
+    RationalNumber[numerator * other.numerator, denominator * other.denominator]
+  end
+
+  def /(other)
+    return NaN if other.zero?
+    self * other.invert
+  end
+
 end

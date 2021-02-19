@@ -69,4 +69,26 @@ describe RationalNumber do
   it 'yields NaN as the inmverse of 0' do
     expect(RationalNumber[0,1].invert).to eq RationalNumber::NaN
   end
+
+  it 'multiplies rationals' do
+    a = RationalNumber[2*19, 7 * 31]
+    b = RationalNumber[31 * 5, 7 * 2]
+    expect(a * b).to eq RationalNumber[2*19*5*31, 7*31*7*2]
+  end
+
+  it 'divides rationals' do
+    a = RationalNumber[11,17]
+    b = RationalNumber[33,34]
+    expect( a / b ).to eq RationalNumber[2,3]
+  end
+
+  it 'can tell if it is zero' do
+    expect( RationalNumber[0].zero?).to eq true
+  end
+
+  it 'returns NaN when dividing by 0' do
+    a = RationalNumber[11,17]
+    b = RationalNumber[0]
+    expect( a / b ).to eq RationalNumber::NaN
+  end
 end
