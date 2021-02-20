@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 include SeasidesRational
 
 RSpec.describe SeasidesRational do
-  it { is_expected.to be_a SeasidesRational }
 
+  it { is_expected.to be_a SeasidesRational }
 
   it 'has a version number' do
     expect(SeasidesRational::VERSION).not_to be nil
@@ -20,7 +22,7 @@ RSpec.describe SeasidesRational do
   end
 
   it 'can create a rational using [] notation' do
-    expect(RationalNumber[3,5]).to eq RationalNumber.new(3,5)
+    expect(RationalNumber[3, 5]).to eq RationalNumber.new(3, 5)
   end
 
   it 'can create integer values' do
@@ -58,7 +60,7 @@ RSpec.describe SeasidesRational do
   end
 
   it 'computes the negative of a rational' do
-    expect( -RationalNumber.new(7, 29)).to eq RationalNumber.new(-7, 29)
+    expect(-RationalNumber.new(7, 29)).to eq RationalNumber.new(-7, 29)
   end
 
   it 'subtracts to rationals' do
@@ -66,34 +68,34 @@ RSpec.describe SeasidesRational do
   end
 
   it 'inverts a rational number' do
-    expect(RationalNumber[3,7].invert).to eq RationalNumber[7,3]
-    expect(RationalNumber[11,9].invert).to eq RationalNumber[9,11]
-    expect(RationalNumber[11].invert).to eq RationalNumber[1,11]
+    expect(RationalNumber[3, 7].invert).to eq RationalNumber[7, 3]
+    expect(RationalNumber[11, 9].invert).to eq RationalNumber[9, 11]
+    expect(RationalNumber[11].invert).to eq RationalNumber[1, 11]
   end
 
   it 'yields NaN as the inmverse of 0' do
-    expect(RationalNumber[0,1].invert).to eq RationalNumber::NaN
+    expect(RationalNumber[0, 1].invert).to eq RationalNumber::NaN
   end
 
   it 'multiplies rationals' do
-    a = RationalNumber[2*19, 7 * 31]
+    a = RationalNumber[2 * 19, 7 * 31]
     b = RationalNumber[31 * 5, 7 * 2]
-    expect(a * b).to eq RationalNumber[2*19*5*31, 7*31*7*2]
+    expect(a * b).to eq RationalNumber[2 * 19 * 5 * 31, 7 * 31 * 7 * 2]
   end
 
   it 'divides rationals' do
-    a = RationalNumber[11,17]
-    b = RationalNumber[33,34]
-    expect( a / b ).to eq RationalNumber[2,3]
+    a = RationalNumber[11, 17]
+    b = RationalNumber[33, 34]
+    expect(a / b).to eq RationalNumber[2, 3]
   end
 
   it 'can tell if it is zero' do
-    expect( RationalNumber[0].zero?).to eq true
+    expect(RationalNumber[0].zero?).to eq true
   end
 
   it 'returns NaN when dividing by 0' do
-    a = RationalNumber[11,17]
+    a = RationalNumber[11, 17]
     b = RationalNumber[0]
-    expect( a / b ).to eq RationalNumber::NaN
+    expect(a / b).to eq RationalNumber::NaN
   end
 end
