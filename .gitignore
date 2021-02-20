@@ -194,3 +194,7 @@ GitHub.sublime-settings
 .idea/
 tmp/
 /.idea
+/.yardoc
+
+# rspec failure tracking
+.rspec_status
