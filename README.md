@@ -6,7 +6,7 @@ This class isn't necessary, because there already *is* `Rational` in Ruby which 
 However, _this_ code is created while working through J.B Rainsberger's [The World's Best Intro to TDD (WBITDD)](http://www.jbrains.ca/training/the-worlds-best-introduction-to-test-driven-development/).
 
 
-<span style="font-weight:bold;color:red">WARNING</span>: I mean it: Use Ruby's `Rational` class instead.
+### **WARNING** I mean it: Use Ruby's `Rational` class instead.
 
 ## Installation
 
