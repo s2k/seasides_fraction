@@ -54,9 +54,9 @@ RSpec.describe SeasidesRational do
   end
 
   it 'returns NaN for an invalid rational number' do
-    expect(RationalNumber.new(0, 0)).to eq RationalNumber::NaN
-    expect(RationalNumber.new(1, 0)).to eq RationalNumber::NaN
-    expect(RationalNumber.new(1.4, 0)).to eq RationalNumber::NaN
+    expect(RationalNumber.new(0, 0)).to eq RationalNumber::NAN
+    expect(RationalNumber.new(1, 0)).to eq RationalNumber::NAN
+    expect(RationalNumber.new(1.4, 0)).to eq RationalNumber::NAN
   end
 
   it 'computes the negative of a rational' do
@@ -73,8 +73,8 @@ RSpec.describe SeasidesRational do
     expect(RationalNumber[11].invert).to eq RationalNumber[1, 11]
   end
 
-  it 'yields NaN as the inmverse of 0' do
-    expect(RationalNumber[0, 1].invert).to eq RationalNumber::NaN
+  it 'yields NAN as the inverse of 0' do
+    expect(RationalNumber[0, 1].invert).to eq RationalNumber::NAN
   end
 
   it 'multiplies rationals' do
@@ -93,9 +93,9 @@ RSpec.describe SeasidesRational do
     expect(RationalNumber[0].zero?).to eq true
   end
 
-  it 'returns NaN when dividing by 0' do
+  it 'returns NAN when dividing by 0' do
     a = RationalNumber[11, 17]
     b = RationalNumber[0]
-    expect(a / b).to eq RationalNumber::NaN
+    expect(a / b).to eq RationalNumber::NAN
   end
 end

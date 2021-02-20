@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 require 'seasides_rational/version'
 
 module SeasidesRational
   class RationalNumber
     attr_reader :numerator, :denominator
 
-    NaN = new do
-      def denominator
+    NAN = new do
+      def numerator
         :not_a_number
       end
 
-      def numerator
+      def denominator
         :not_a_number
       end
     end
@@ -22,10 +24,12 @@ module SeasidesRational
       new(numerator, denominator)
     end
 
-
     def initialize(numerator = 0, denominator = 1)
-      return NaN if denominator.zero?
-      normalize(denominator, numerator)
+      if denominator.zero?
+        @nominator = @denominator = NAN.numerator, NAN.denominator
+      else
+        normalize(denominator, numerator)
+      end
     end
 
     def normalize(denominator, numerator)
@@ -36,7 +40,7 @@ module SeasidesRational
     end
 
     def normalize_sign
-      return unless @denominator < 0
+      return unless @denominator.negative?
       @denominator = -@denominator
       @numerator   = -@numerator
     end
@@ -71,9 +75,8 @@ module SeasidesRational
     end
 
     def /(other)
-      return NaN if other.zero?
+      return NAN if other.zero?
       self * other.invert
     end
-
   end
 end
