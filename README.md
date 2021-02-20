@@ -1,3 +1,5 @@
+# SeasidesRational
+
 ##  A simple class modeling rational numbers in Ruby
 
 Yes, this class isn't necessary, because there already *is* `Rational` in Ruby which does exactly this.
@@ -5,10 +7,58 @@ Yes, this class isn't necessary, because there already *is* `Rational` in Ruby w
 However, _this_ code is created while working through J.B Rainsberger's [The World's Best Intro to TDD (WBITDD)](http://www.jbrains.ca/training/the-worlds-best-introduction-to-test-driven-development/).
 
 
-## How to Use
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/seasides_rational`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-* Don't. Use Ruby's `Rational`class instead.
-* If you also work through WBITTD, I suggest you write _your_ implementation first and then look at my work.
-* If you want to use _this_ code anway:
-  * Put `lib/rational_number.rb` where your Ruby installation can find it when it's `require`d.
-  * Then `require 'rational_number'` … and use the class `RationalNumber`.
+TODO: Delete this and the text above, and describe your gem
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'seasides_rational'
+```
+
+And then execute:
+
+```
+> bundle
+```
+
+Or install it yourself as:
+
+```
+> gem install seasides_rational
+```
+
+## Usage
+
+In your code `require 'seasides_rational` to load the gem and then either use the class  `SeasidesRational::RationalNumber`or `include  SeasidesRational` and use class `RationalNumber` without having to type the full name all the time.
+
+An example from an `irb` session:
+
+```
+$ irb -r seasides_rational
+3.0.0 :001 > include SeasidesRational
+ => Object
+3.0.0 :002 > SeasidesRational::RationalNumber[2,3] +  RationalNumber[7,11]
+ => #<SeasidesRational::RationalNumber:0x00007f9e1095b4c8 @denominator=33, @numerator=43>
+```
+
+## Development
+
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/s2k/seasides_rational. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the SeasidesRational project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/s2k/seasides_rational/blob/master/CODE_OF_CONDUCT.md).
