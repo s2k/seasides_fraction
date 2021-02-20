@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    seasides_fraction (0.6.0)
+    seasides_fraction (0.7.0)
 
 GEM
   remote: https://rubygems.org/
