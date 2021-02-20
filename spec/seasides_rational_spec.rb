@@ -1,7 +1,12 @@
-require 'spec_helper'
+include SeasidesRational
 
-describe RationalNumber do
-  it { is_expected.to be_a RationalNumber }
+RSpec.describe SeasidesRational do
+  it { is_expected.to be_a SeasidesRational }
+
+
+  it 'has a version number' do
+    expect(SeasidesRational::VERSION).not_to be nil
+  end
 
   it 'can create real rational numbers' do
     expect(RationalNumber.new(1, 2).numerator).to be 1
