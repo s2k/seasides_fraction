@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
-require 'seasides_rational/version'
+require 'seasides_fraction/version'
 
-module SeasidesRational
-  class RationalNumber
+module SeasidesFraction
+  # Fraction represents a rational number. The usual mathematical operations (+, -, *, /) work,
+  # as well as getting the negative value and the inverse.
+  #
+  class Fraction
     attr_reader :numerator, :denominator
 
     NAN = new do
@@ -41,20 +44,17 @@ module SeasidesRational
 
     def normalize_sign
       return unless @denominator.negative?
+
       @denominator = -@denominator
       @numerator   = -@numerator
     end
 
+    def to_s
+      "#{numerator} / #{denominator}"
+    end
+
     def ==(other)
       numerator == other.numerator && denominator == other.denominator
-    end
-
-    def zero?
-      self == self.class.zero
-    end
-
-    def -@
-      self.class.new(-numerator, denominator)
     end
 
     def +(other)
@@ -66,8 +66,8 @@ module SeasidesRational
       self + -other
     end
 
-    def invert
-      self.class.new(denominator, numerator)
+    def -@
+      self.class.new(-numerator, denominator)
     end
 
     def *(other)
@@ -76,7 +76,16 @@ module SeasidesRational
 
     def /(other)
       return NAN if other.zero?
+
       self * other.invert
+    end
+
+    def zero?
+      self == self.class.zero
+    end
+
+    def invert
+      self.class.new(denominator, numerator)
     end
   end
 end

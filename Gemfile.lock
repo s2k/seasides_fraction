@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    seasides_rational (0.5.0)
+    seasides_fraction (0.6.0)
 
 GEM
   remote: https://rubygems.org/
@@ -73,7 +73,7 @@ DEPENDENCIES
   rake (~> 13.0)
   rb-fsevent (~> 0.10)
   rspec (~> 3.1)
-  seasides_rational!
+  seasides_fraction!
   terminal-notifier (~> 2.0)
   terminal-notifier-guard (~> 1.7)
 

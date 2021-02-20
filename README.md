@@ -1,4 +1,4 @@
-# SeasidesRational
+# SeasidesFraction
 
 ##  A simple class modeling rational numbers in Ruby
 
@@ -6,12 +6,14 @@ This class isn't necessary, because there already *is* `Rational` in Ruby which 
 However, _this_ code is created while working through J.B Rainsberger's [The World's Best Intro to TDD (WBITDD)](http://www.jbrains.ca/training/the-worlds-best-introduction-to-test-driven-development/).
 
 
+<span style="font-weight:bold;color:red">WARNING</span>: I mean it: Use Ruby's `Rational` class instead.
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'seasides_rational'
+gem 'seasides_fraction'
 ```
 
 And then execute:
@@ -23,7 +25,7 @@ And then execute:
 Or install it yourself as:
 
 ```
-> gem install seasides_rational
+> gem install seasides_fraction
 ```
 
 ## Usage
@@ -33,12 +35,16 @@ In your code `require 'seasides_rational` to load the gem and then either use th
 An example from an `irb` session:
 
 ```
-$ irb -r seasides_rational
-3.0.0 :001 > include SeasidesRational
+> irb -r seasides_rational
+3.0.0 :001 > SeasidesRational::Fraction[2,3] + SeasidesRational::Fraction[7,11]
+ => #<SeasidesRational::Fraction:0x00007ffb3385b138 @denominator=33, @numerator=43>
+3.0.0 :002 > include SeasidesRational
  => Object
-3.0.0 :002 > SeasidesRational::RationalNumber[2,3] +  RationalNumber[7,11]
- => #<SeasidesRational::RationalNumber:0x00007f9e1095b4c8 @denominator=33, @numerator=43>
-```
+3.0.0 :003 > sum = Fraction[7,22] + Fraction[33,21]
+ => #<SeasidesRational::Fraction:0x00007ffb33a24320 @denominator=154, @numerator=291>
+3.0.0 :004 > sum.to_s
+ => "291 / 154"
+ ```
 
 ## Development
 

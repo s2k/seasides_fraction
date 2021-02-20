@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require 'seasides_rational'
+require 'seasides_fraction'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
