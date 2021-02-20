@@ -2,14 +2,9 @@
 
 ##  A simple class modeling rational numbers in Ruby
 
-Yes, this class isn't necessary, because there already *is* `Rational` in Ruby which does exactly this.
-
+This class isn't necessary, because there already *is* `Rational` in Ruby which you should use instead of this one.
 However, _this_ code is created while working through J.B Rainsberger's [The World's Best Intro to TDD (WBITDD)](http://www.jbrains.ca/training/the-worlds-best-introduction-to-test-driven-development/).
 
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/seasides_rational`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
